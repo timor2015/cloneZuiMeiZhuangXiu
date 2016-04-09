@@ -6,19 +6,19 @@ var browserSync = require('browser-sync');
 
 // gulp 默认任务
 gulp.task('default', ['browserSync'], function(){
-	gulp.watch('./src/css/**/*.css', ['sass']);
+	gulp.watch('./src/scss/**/*.scss', ['sass']);
 	gulp.watch('./src/js/**/*.js').on('change', browserSync.reload);
 });
 
 
 // gulp sass解析任务
 gulp.task('sass', function(){
-	gulp.sass('./src/scss/**/*scss')
+	sass('./src/scss/**/*scss')
 		.on('error', function (err) {
             console.error('Error!', err.message);
         })
-        .pipe('./src/css')
-        .pipe(reload({stream: true}));
+        .pipe(gulp.dest('./src/css'))
+        .pipe(browserSync.reload({stream: true}));
 })
 
 // 浏览器刷新任务
