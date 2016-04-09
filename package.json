@@ -1,0 +1,24 @@
+{
+  "name": "zuimeizhuangxiu",
+  "version": "1.0.0",
+  "description": "仿最美装修",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timor2015/cloneZuiMeiZhuangXiu.git"
+  },
+  "author": "timor2015",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timor2015/cloneZuiMeiZhuangXiu/issues"
+  },
+  "homepage": "https://github.com/timor2015/cloneZuiMeiZhuangXiu#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1",
+    "gulp-ruby-sass": "^2.0.6"
+  }
+}
