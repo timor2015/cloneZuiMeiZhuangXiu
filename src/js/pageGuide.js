@@ -26,7 +26,6 @@ define({
 	          	hash = getHash($btn.attr('href'));
 	        $doc.trigger('spa:navigate', {hash: hash, pushData: {}})
     	})
-
     },
 
     // 创建swiper滑动效果
@@ -36,5 +35,7 @@ define({
 		    resistanceRatio : 0,
 		    loop: false,
 		})        
-    }
+    },
+
+
 })

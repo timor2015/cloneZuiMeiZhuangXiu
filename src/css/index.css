@@ -27,3 +27,6 @@ html, body {
       line-height: 0.8rem;
       border: 0px;
       text-decoration: none; }
+
+#swiper_home {
+  overflow: hidden; }
