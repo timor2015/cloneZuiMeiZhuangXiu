@@ -3,7 +3,7 @@ define({
 	body : '\
 	<div class="container">\
 	<header class="header">\
-		<div class="user"><a href="#spa/user" class="iconfont">&#xe71a;</a></div>\
+		<div class="user"><a href="#spa/user" data-animate="slideInLeft" class="iconfont">&#xe71a;</a></div>\
 		<div class="title">发现</div>\
 		<div class="find"><a href="#spa/find" class="iconfont">&#xe725;</a></div>\
 	</header>\
@@ -45,6 +45,7 @@ define({
 
 	// 初始化出5个块内容
 	beforeopen : function(pageData){
+		var now_active = 0;
 		// 强制定义中间内容框的高度
 		$('#swiper_home').css('height', $('#swiper_home').parent().css('height'));
 		// 初始化内容区域的swiper滑动
@@ -53,14 +54,16 @@ define({
 		    resistanceRatio : 0,
 		    loop: false,
 		    onSlideChangeEnd: function(swiper){
-		        console.log(guideSwiper.progress);
+		    	var go_num = guideSwiper.progress * 4;
+		        $('nav li').eq(now_active).removeClass('nav_act');
+		        $('nav li').eq(go_num).addClass('nav_act');
+		        now_active = go_num;
 		    },
 		});
 
 
 		// 导航点击事件切换页面
 		(function(){
-			var now_active = 0;
 			$('nav li').each(function(){
 				$(this).click(function(){
 					guideSwiper.slideTo($(this).index(), 300, false);

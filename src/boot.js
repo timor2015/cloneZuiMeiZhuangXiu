@@ -36,7 +36,7 @@ var pageHome = {
 var pageUser = {
   route : 'spa/user',
   classname : 'spa-user',
-  animate : 'pushOutRight',
+  animate : 'slideInLeft',
   view : function(){
     var $page = this;
     requirejs(['pageUser'], function(viewData){

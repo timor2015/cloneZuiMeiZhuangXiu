@@ -1,6 +1,9 @@
 @charset "utf-8";
 @import "./cssPrefix.scss";
 
+// 图标默认颜色
+$iconColor : #93c757;
+
 html, body{
 	width : 100%;
 	height : 100%;
@@ -128,7 +131,7 @@ li{
 				font-size : 0.24rem;
 			}
 			&.nav_act{
-				color : #93c757;
+				color : $iconColor;
 			}
 		} 
 	}
@@ -136,4 +139,68 @@ li{
 
 #swiper_home{
 	@include overflow(hidden);
+}
+
+#user{
+	width : 100%;
+	height : 100%;
+	@include flexbox(flex);
+	@include flex-direction(column);
+	.user_title{
+		width : 100%;
+		height : 0.74rem;
+		@include border($border-width : 0 0 1px 0, $border-color : #ccc);
+		background : #fafafa;
+		@include flexbox(flex);
+		.user_title_left{
+			@include flex(1);
+			@include flexbox(flex);
+			@include justify-content(space-around);
+			.user_title_back{
+				
+				@include flexbox(flex);
+				@include align-items(center);
+				a{
+					font-size : 0.3rem;
+					color : $iconColor;
+				}
+			}
+			.user_title_city{
+				@include flexbox(flex);
+				@include align-items(center);
+				margin-left : -0.2rem;
+				a{
+					width : 0.9rem;
+					font-size : 0.26rem;
+					background : url(../../source/images/xiala.gif) no-repeat right top;
+				}
+			}
+		}
+		.user_title_center{
+			@include flex(1);
+			font-size : 0.3rem;
+			line-height : 0.74rem;
+			text-align : center;
+			font-weight : 900;
+		}
+		.user_title_right{
+			@include flex(1);
+			@include flexbox(flex);
+			@include align-items(center);
+			@include justify-content(flex-end);
+			a{
+				font-size : 0.4rem;
+				color : $iconColor;
+			}
+			.user_title_right_add{
+				width : 0.2rem;
+			}
+		}
+
+	}
+	.user_con{
+		width : inherit !important;
+		@include flex(1);
+		background : #fff;
+	}
 }
