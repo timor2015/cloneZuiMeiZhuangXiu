@@ -1,6 +1,14 @@
 define({
 	title : '最美装修-首页',
-	body : '<div class="swiper-container" id="swiper_home">\
+	body : '\
+	<div class="container">\
+	<header class="header">\
+		<div class="user"><a href="#spa/user" class="iconfont">&#xe71a;</a></div>\
+		<div class="title">发现</div>\
+		<div class="find"><a href="#spa/find" class="iconfont">&#xe725;</a></div>\
+	</header>\
+	<div class="content">\
+		<div class="swiper-container" id="swiper_home">\
 			<div class="swiper-wrapper">\
 		        <div class="swiper-slide">1</div>\
 		        <div class="swiper-slide">2</div>\
@@ -9,6 +17,17 @@ define({
 		        <div class="swiper-slide">5</div>\
 			</div>\
 		</div>\
+	</div>\
+	<nav class="nav">\
+		<ul>\
+			<li class="nav_act"><i class="iconfont">&#xe6f9;</i><b>发现</b></li>\
+			<li><i class="iconfont">&#xe704;</i><b>案例</b></li>\
+			<li><i class="iconfont">&#xe6e2;</i><b>日记</b></li>\
+			<li><i class="iconfont">&#xe717;</i><b>灵感</b></li>\
+			<li><i class="iconfont">&#xe6e5;</i><b>攻略</b></li>\
+		</ul>\
+	</nav>\
+	</div>\
     ',
 
 	init : function(pageData){
@@ -26,11 +45,14 @@ define({
 
 	// 初始化出5个块内容
 	beforeopen : function(pageData){
+		// 强制定义中间内容框的高度
 		$('#swiper_home').css('height', $('#swiper_home').parent().css('height'));
+		// 初始化内容区域的swiper滑动
 		var guideSwiper = new Swiper ('#swiper_home', {
 		    direction: 'horizontal',
 		    resistanceRatio : 0,
 		    loop: false,
-		})    
+		});
+		    
 	}
 })

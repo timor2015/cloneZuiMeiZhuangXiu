@@ -19,6 +19,7 @@ var pageGuide = {
 }
 
 
+// 首页 也是项目的骨架
 var pageHome = {
   route : 'spa/home',
   classname : 'spa-home',
@@ -31,7 +32,21 @@ var pageHome = {
   }
 }
 
-$doc.trigger('spa:route', [pageGuide, pageHome]);
+// 测试用页面
+var pageGo = {
+  route : 'spa/go',
+  classname : 'spa-go',
+  animate : 'pushOutLeft',
+  view : function(){
+    var $page = this;
+    requirejs(['pageGo'], function(viewData){
+      $doc.trigger('spa:initpage', [$page, viewData]);
+    })
+  }
+}
+
+
+$doc.trigger('spa:route', [pageGuide, pageHome, pageGo]);
 
 
 

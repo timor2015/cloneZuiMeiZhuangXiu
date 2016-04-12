@@ -1,0 +1,280 @@
+@charset "utf-8";
+/**
+ * 定义渐变色值
+ * @method gradient
+ * @param {String} $type 指定渐变的4种类型：linear, repeating-linear, radial, repeating-radial
+ * @param {String} $gradient 指定渐变取值，与w3c最新原生语法一致
+ */
+@mixin gradient($type, $gradient...) {
+    @if map-get($setting, is-vendor-prefix) {
+        @each $vendor in map-get($setting, vendor-prefix) {
+            background-image: #{$vendor}#{$type}-gradient($gradient);
+        }
+    }
+    background-image: #{$type}-gradient($gradient);
+}
+
+/**
+ * 清除浮动方案
+ * @method clearfix
+ */
+@mixin clearfix() {
+    &::after{
+        display: block;
+        overflow: hidden;
+        clear: both;
+        height: 0;
+        content: "\0020";
+    }
+}
+
+/**
+ * 定义盒模型
+ * @method box-sizing
+ * @param {String} $box-sizing 的2个值分别为：content-box(标准盒模型) | border-box(怪异盒模型)
+ */
+@mixin box-sizing($box-sizing: border-box) {
+    box-sizing : $box-sizing;
+}
+
+/**
+ * 定义圆角
+ * @method border-radius
+ * @param {String} $border-radius 取值与原生语法一致
+ */
+@mixin border-radius($border-radius...) {
+    border-radius: $border-radius;
+    // 修复某些安卓机型上“边框+背景”，背景溢出的情况
+    // 之所以会这样是因为这些机型的背景是从边框处开始渲染，所以只需要改成从padding处渲染即可
+    @include background-clip(padding-box !important);
+}
+
+/**
+ * 生成全屏方法
+ * @method fullscreen
+ * @param {Integer} $z-index 定义层叠级别
+ */
+@mixin fullscreen($z-index: null) {
+    position: absolute;
+    z-index: $z-index;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+/**
+ * 生成全屏方法
+ * @method fullscreen
+ * @param {Integer} $z-index 定义层叠级别
+ */
+@mixin fullscreen($z-index: null) {
+    position: absolute;
+    z-index: $z-index;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/**
+ * 定义是否有滚动条
+ * @method overflow
+ * @param {String} $overflow 默认值：auto，取值与最新原生语法一致
+ */
+@mixin overflow($overflow: auto) {
+    @if $overflow == auto {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    } @else {
+        overflow: $overflow;
+    }
+}
+
+// flexbox 样式
+// flex 和 inline-flex
+@mixin flexbox($flexbox : flex){
+	@if $flexbox == flex {
+		display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+	}@else {
+		display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+	}
+}
+
+/**
+ * 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @param {String} $flex 默认值：1，取值与最新原生语法一致
+ * @param {String} $direction 默认值: row
+ */
+@mixin flex($flex: 1, $direction: row) {
+    -webkit-box-flex: $flex;
+    -webkit-flex: $flex;
+    flex: $flex;
+    // 修复Android Browser4.3及以下，iOS Safari6.1及以下按比例分配错误的问题
+    @if $direction == column {
+        height: .1px;
+    } @else {
+        width: .1px;
+    }
+}
+
+
+/**
+ * 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @param {String} $flex-direction 默认值：row，取值与最新原生语法一致
+ */
+@mixin flex-direction($flex-direction: row) {
+    @if $flex-direction == row {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+    } @else if $flex-direction == column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    } @else if $flex-direction == row-reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+    } @else if $flex-direction == column-reverse {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+    }
+    -webkit-flex-direction: $flex-direction;
+    flex-direction: $flex-direction;
+}
+
+/**
+ * 定义伸缩盒子元素的水平对齐方式
+ * @method justify-content
+ * @param {String} $justify-content 默认值：center，取值与最新原生语法一致
+ */
+@mixin justify-content($justify-content: center) {
+    @if $justify-content == center {
+        -webkit-box-pack: center;
+    } @else if $justify-content == flex-start {
+        -webkit-box-pack: start;
+    } @else if $justify-content == flex-end {
+        -webkit-box-pack: end;
+    } @else if $justify-content == space-between {
+        -webkit-box-pack: justify;
+    }
+    -webkit-justify-content: $justify-content;
+    justify-content: $justify-content;
+}
+
+/**
+ * 定义伸缩盒子元素的垂直对齐方式
+ * @method align-items
+ * @param {String} $align-items 默认值：center，取值与最新原生语法一致
+ */
+@mixin align-items($align-items: center) {
+    @if $align-items == center {
+        -webkit-box-align: center;
+    } @else if $align-items == flex-start {
+        -webkit-box-align: start;
+    } @else if $align-items == flex-end {
+        -webkit-box-align: end;
+    } @else {
+        -webkit-box-align: $align-items;
+    }
+    -webkit-align-items: $align-items;
+    align-items: $align-items;
+}
+
+/**
+ * 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @param {String} $order 默认值：1，取值与最新原生语法一致
+ */
+@mixin order($order: 1) {
+    -webkit-box-ordinal-group: $order;
+    -webkit-order: $order;
+    order: $order;
+}
+
+/**
+ * 定义伸缩盒子元素自身的垂直对齐方式
+ * @method align-self
+ * @param {String} $align-self 默认值：center，取值与最新原生语法一致
+ */
+@mixin align-self($align-self: center) {
+    -webkit-align-self: $align-self;
+    align-self: $align-self;
+}
+
+/**
+ * 定义伸缩盒子元素溢出排版
+ * @method flex-wrap
+ * @param {String} $flex-wrap 默认值：nowrap，取值与最新原生语法一致
+ */
+@mixin flex-wrap($flex-wrap: nowrap) {
+    @if $flex-wrap == nowrap {
+        -webkit-box-lines: single;
+    } @else {
+        -webkit-box-lines: multiple;
+    }
+    -webkit-flex-wrap: $flex-wrap;
+    flex-wrap: $flex-wrap;
+}
+
+
+// 一像素边框
+@mixin border($border-width: 1px, $border-color: map-get($base, border-color), $border-style: solid, $radius: null) {
+    // 为边框位置提供定位参考
+    position: relative;
+    @if $border-width == null {
+        $border-width: 0;
+    }
+    border-radius: $radius;
+    &::after {
+        // 用以解决边框layer遮盖内容
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: $border-color;
+        border-style: $border-style;
+        border-width: $border-width;
+        @include box-sizing(border-box);
+        // 适配dpr进行缩放
+        @media (-webkit-min-device-pixel-ratio:1.5), (min-device-pixel-ratio: 1.5){
+		    width : 150%;
+		    height : 150%;
+		    -webkit-transform: scale(.7);
+		    transform: scale(.7);
+		    @if $radius != null {
+	            border-radius: $radius * 1.5;
+	        }
+		}
+
+		@media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2){
+		    width : 200%;
+		    height : 200%;
+			-webkit-transform: scale(.5);
+		    transform: scale(.5);
+		   	@if $radius != null {
+	            border-radius: $radius * 2;
+	        }
+		}
+
+		@media (-webkit-min-device-pixel-ratio:3), (min-device-pixel-ratio: 3){
+		    width : 300%;
+		    height : 300%;
+			-webkit-transform: scale(.3);
+		    transform: scale(.3);
+		   	@if $radius != null {
+	            border-radius: $radius * 3;
+	        }
+		}
+		-webkit-transform-origin : 0 0;
+        transform-origin : 0 0;
+    }
+}
+

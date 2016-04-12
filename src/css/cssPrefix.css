@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/**
+ * 定义渐变色值
+ * @method gradient
+ * @param {String} $type 指定渐变的4种类型：linear, repeating-linear, radial, repeating-radial
+ * @param {String} $gradient 指定渐变取值，与w3c最新原生语法一致
+ */
+/**
+ * 清除浮动方案
+ * @method clearfix
+ */
+/**
+ * 定义盒模型
+ * @method box-sizing
+ * @param {String} $box-sizing 的2个值分别为：content-box(标准盒模型) | border-box(怪异盒模型)
+ */
+/**
+ * 定义圆角
+ * @method border-radius
+ * @param {String} $border-radius 取值与原生语法一致
+ */
+/**
+ * 生成全屏方法
+ * @method fullscreen
+ * @param {Integer} $z-index 定义层叠级别
+ */
+/**
+ * 生成全屏方法
+ * @method fullscreen
+ * @param {Integer} $z-index 定义层叠级别
+ */
+/**
+ * 定义是否有滚动条
+ * @method overflow
+ * @param {String} $overflow 默认值：auto，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @param {String} $flex 默认值：1，取值与最新原生语法一致
+ * @param {String} $direction 默认值: row
+ */
+/**
+ * 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @param {String} $flex-direction 默认值：row，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的水平对齐方式
+ * @method justify-content
+ * @param {String} $justify-content 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的垂直对齐方式
+ * @method align-items
+ * @param {String} $align-items 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @param {String} $order 默认值：1，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素自身的垂直对齐方式
+ * @method align-self
+ * @param {String} $align-self 默认值：center，取值与最新原生语法一致
+ */
+/**
+ * 定义伸缩盒子元素溢出排版
+ * @method flex-wrap
+ * @param {String} $flex-wrap 默认值：nowrap，取值与最新原生语法一致
+ */
