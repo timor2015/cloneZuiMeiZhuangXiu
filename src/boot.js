@@ -33,20 +33,20 @@ var pageHome = {
 }
 
 // 测试用页面
-var pageGo = {
-  route : 'spa/go',
-  classname : 'spa-go',
-  animate : 'pushOutLeft',
+var pageUser = {
+  route : 'spa/user',
+  classname : 'spa-user',
+  animate : 'pushOutRight',
   view : function(){
     var $page = this;
-    requirejs(['pageGo'], function(viewData){
+    requirejs(['pageUser'], function(viewData){
       $doc.trigger('spa:initpage', [$page, viewData]);
     })
   }
 }
 
 
-$doc.trigger('spa:route', [pageGuide, pageHome, pageGo]);
+$doc.trigger('spa:route', [pageGuide, pageHome, pageUser]);
 
 
 

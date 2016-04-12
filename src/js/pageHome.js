@@ -52,7 +52,11 @@ define({
 		    direction: 'horizontal',
 		    resistanceRatio : 0,
 		    loop: false,
+		    onSlideChangeEnd: function(swiper){
+		        console.log(guideSwiper.progress);
+		    },
 		});
+
 
 		// 导航点击事件切换页面
 		(function(){
