@@ -103,7 +103,7 @@ li{
 	@include flex(1);
 }
 
-.nav{
+.nav{ 
 	width : 100%;
 	height : 0.78rem;
 	padding-top: 0.08rem;
@@ -117,6 +117,7 @@ li{
 		@include justify-content(space-around);
 		li{
 			color : #767676;
+			padding : 0px 0.2rem;
 			@include flexbox(flex);
 			@include flex-direction(column);
 			@include align-items(center);
@@ -129,7 +130,7 @@ li{
 			&.nav_act{
 				color : #93c757;
 			}
-		}
+		} 
 	}
 }
 

@@ -53,6 +53,19 @@ define({
 		    resistanceRatio : 0,
 		    loop: false,
 		});
-		    
+
+		// 导航点击事件切换页面
+		(function(){
+			var now_active = 0;
+			$('nav li').each(function(){
+				$(this).click(function(){
+					guideSwiper.slideTo($(this).index(), 300, false);
+					$('nav li').eq(now_active).removeClass('nav_act');
+					$(this).addClass('nav_act');
+					now_active = $(this).index();
+				})
+			})    
+		})();
+		
 	}
 })

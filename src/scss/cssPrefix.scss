@@ -227,6 +227,7 @@
 @mixin border($border-width: 1px, $border-color: map-get($base, border-color), $border-style: solid, $radius: null) {
     // 为边框位置提供定位参考
     position: relative;
+    overflow : hidden;
     @if $border-width == null {
         $border-width: 0;
     }
@@ -244,15 +245,15 @@
         border-width: $border-width;
         @include box-sizing(border-box);
         // 适配dpr进行缩放
-        @media (-webkit-min-device-pixel-ratio:1.5), (min-device-pixel-ratio: 1.5){
-		    width : 150%;
-		    height : 150%;
-		    -webkit-transform: scale(.7);
-		    transform: scale(.7);
-		    @if $radius != null {
-	            border-radius: $radius * 1.5;
-	        }
-		}
+  //       @media (-webkit-min-device-pixel-ratio:1.5), (min-device-pixel-ratio: 1.5){
+		//     width : 150%;
+		//     height : 150%;
+		//     -webkit-transform: scale(.75);
+		//     transform: scale(.75);
+		//     @if $radius != null {
+	 //            border-radius: $radius * 1.5;
+	 //        }
+		// }
 
 		@media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2){
 		    width : 200%;
@@ -267,8 +268,8 @@
 		@media (-webkit-min-device-pixel-ratio:3), (min-device-pixel-ratio: 3){
 		    width : 300%;
 		    height : 300%;
-			-webkit-transform: scale(.3);
-		    transform: scale(.3);
+			-webkit-transform: scale(0.333);
+		    transform: scale(0.333);
 		   	@if $radius != null {
 	            border-radius: $radius * 3;
 	        }
