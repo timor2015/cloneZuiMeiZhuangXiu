@@ -10,7 +10,22 @@ define({
 	<div class="content">\
 		<div class="swiper-container" id="swiper_home">\
 			<div class="swiper-wrapper">\
-		        <div class="swiper-slide">1</div>\
+		        <div class="swiper-slide" id="scroll1">\
+		        	<div class="con_home">\
+		        		<div class="home_ban">\
+		        			<div class="swiper-container" id="home_ban_swiper">\
+							    <div class="swiper-wrapper">\
+							        <div class="swiper-slide"><a href="#spa/banner-specific"><img src="./source/images/ban_1.jpg"/></a></div>\
+							        <div class="swiper-slide">Slide 2</div>\
+							        <div class="swiper-slide">Slide 3</div>\
+							    </div>\
+							    <div class="swiper-pagination"></div>\
+							</div>\
+		        		</div>\
+		        		<div class="home_actions"></div>\
+		        		<div class="home_cells"></div>\
+		        	</div>\
+		        </div>\
 		        <div class="swiper-slide">2</div>\
 		        <div class="swiper-slide">3</div>\
 		        <div class="swiper-slide">4</div>\
@@ -58,7 +73,15 @@ define({
 		        $('nav li').eq(now_active).removeClass('nav_act');
 		        $('nav li').eq(go_num).addClass('nav_act');
 		        now_active = go_num;
+		        //console.log(now_active);
 		    },
+		});
+
+		// 初始化内容区域的swiper滑动
+		var home_ban_Swiper = new Swiper ('#home_ban_swiper', {
+		    direction: 'horizontal',
+		    resistanceRatio : 0,
+		    loop: false,
 		});
 
 
@@ -70,9 +93,22 @@ define({
 					$('nav li').eq(now_active).removeClass('nav_act');
 					$(this).addClass('nav_act');
 					now_active = $(this).index();
+					console.log(now_active);
 				})
 			})    
 		})();
+		
+		// 固定swiper高度
+		$('#swiper_home').css('height', $('#swiper_home').parent().css('height'));
+		
+		// 区域滚动效果
+		setTimeout(function(){
+			var myScroll1 = new IScroll('#scroll1',{
+				mouseWheel: true,
+				scrollbars: true
+			});
+			console.log(23)
+		}, 100)
 		
 	}
 })
