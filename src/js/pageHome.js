@@ -15,9 +15,9 @@ define({
 		        		<div class="home_ban">\
 		        			<div class="swiper-container" id="home_ban_swiper">\
 							    <div class="swiper-wrapper">\
-							        <div class="swiper-slide"><a href="#spa/banner-specific"><img src="./source/images/ban_1.jpg"/></a></div>\
-							        <div class="swiper-slide">Slide 2</div>\
-							        <div class="swiper-slide">Slide 3</div>\
+							        <div class="swiper-slide"><a href="#spa/banner-specific/1"><img src="./source/images/ban_1.jpg"/></a></div>\
+							        <div class="swiper-slide"><a href="#spa/banner-specific/2"><img src="./source/images/ban_2.jpg"/></a></div>\
+							        <div class="swiper-slide"><a href="#spa/banner-specific/3"><img src="./source/images/ban_3.jpg"/></a></div>\
 							    </div>\
 							    <div class="swiper-pagination"></div>\
 							</div>\
@@ -80,8 +80,9 @@ define({
 		// 初始化内容区域的swiper滑动
 		var home_ban_Swiper = new Swiper ('#home_ban_swiper', {
 		    direction: 'horizontal',
-		    resistanceRatio : 0,
+		    resistanceRatio : 0.8,
 		    loop: false,
+		    pagination: '.swiper-pagination',
 		});
 
 
@@ -93,7 +94,6 @@ define({
 					$('nav li').eq(now_active).removeClass('nav_act');
 					$(this).addClass('nav_act');
 					now_active = $(this).index();
-					console.log(now_active);
 				})
 			})    
 		})();
@@ -107,7 +107,6 @@ define({
 				mouseWheel: true,
 				scrollbars: true
 			});
-			console.log(23)
 		}, 100)
 		
 	}

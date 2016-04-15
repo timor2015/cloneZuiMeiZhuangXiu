@@ -208,7 +208,8 @@ li {
     overflow: hidden; }
     .content .swiper-slide .con_home .home_ban {
       width: 100%;
-      height: 2.56rem; }
+      height: 2rem;
+      overflow: hidden; }
       .content .swiper-slide .con_home .home_ban img {
         width: 100%; }
     .content .swiper-slide .con_home .home_actions {
