@@ -120,7 +120,55 @@ li{
 			}
 			.home_actions{
 				width : 100%;
-				height : 2.2rem;
+				height : 2rem;
+				background: #fff;
+				@include flexbox(flex);
+				@include justify-content(space-around);
+				div{
+					width : 1.2rem;
+					height : 2rem;
+					text-align:center;
+					@include flexbox(flex);
+					@include flex-direction(column);
+					@include justify-content(center);
+					a{
+						width : 1rem;
+						height : 1rem;
+						color : #fff;
+						display : inline-block;
+						border-radius : 50%;
+						font-size : 0.5rem;
+						text-align : center;
+						line-height : 1rem;
+						margin:0px auto;
+						margin-top:0.2rem;
+					}
+					p{
+						font-size:0.26rem;
+						text-align : center;
+					}					
+				}
+				.server_design{
+					a{
+						background : #3fd3c8;
+					}
+				}
+				.server_day{
+					a{
+						background : #3db1ea;
+					}
+				}
+				.server_cash{
+					a{
+						background : #ff6263;
+					}
+				}
+				.server_gua{
+					a{
+						font-family:"微软雅黑";
+						background : #bc45df;
+					}
+				}
 			}
 		}
 	}
@@ -177,10 +225,12 @@ li{
 			@include flexbox(flex);
 			@include justify-content(space-around);
 			.user_title_back{
-				
+
 				@include flexbox(flex);
 				@include align-items(center);
 				a{
+					width : 0.6rem;
+					height : 100%;
 					font-size : 0.3rem;
 					color : $iconColor;
 				}
@@ -193,6 +243,8 @@ li{
 					width : 0.9rem;
 					font-size : 0.26rem;
 					background : url(../../source/images/xiala.gif) no-repeat right top;
+					background-size : 0.18rem;
+					background-position: right center;
 				}
 			}
 		}

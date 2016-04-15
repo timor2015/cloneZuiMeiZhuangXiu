@@ -22,7 +22,24 @@ define({
 							    <div class="swiper-pagination"></div>\
 							</div>\
 		        		</div>\
-		        		<div class="home_actions"></div>\
+		        		<div class="home_actions">\
+		        			<div class="server_design">\
+		        				<a href="#spa/server_design" class="iconfont">&#xe729;</a>\
+		        				<p>装修设计</p>\
+		        			</div>\
+		        			<div class="server_day">\
+		        				<a href="#spa/server_day" class="iconfont">&#xe72e;</a>\
+		        				<p>写日记</p>\
+		        			</div>\
+		        			<div class="server_cash">\
+		        				<a href="#spa/server_cash" class="iconfont">&#xe714;</a>\
+		        				<p>金币商城</p>\
+		        			</div>\
+		        			<div class="server_gua">\
+		        				<a href="#spa/server_gua">刮</a>\
+		        				<p>刮刮乐</p>\
+		        			</div>\
+		        		</div>\
 		        		<div class="home_cells"></div>\
 		        	</div>\
 		        </div>\
