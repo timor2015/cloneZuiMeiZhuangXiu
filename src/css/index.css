@@ -77,7 +77,8 @@ html, body {
 a {
   color: #333;
   text-decoration: none;
-  font-size: 0.2px; }
+  font-size: 0.2px;
+  outline: none; }
 
 li {
   list-style: none; }
@@ -300,6 +301,88 @@ li {
                 transform: scale(0.333); } }
           .content .swiper-slide .con_home .home_cells .home_guess .home_guess_con img {
             width: 100%; }
+    .content .swiper-slide .con_inspir .inspir_filter {
+      width: 100%;
+      height: 0.64rem;
+      background: #f5f5f5;
+      font-size: 0.3rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      position: relative;
+      overflow: hidden; }
+      .content .swiper-slide .con_inspir .inspir_filter::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        content: "\0020";
+        border-color: #ccc;
+        border-style: solid;
+        border-width: 0px 0 1px 0;
+        box-sizing: border-box;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+          .content .swiper-slide .con_inspir .inspir_filter::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+          .content .swiper-slide .con_inspir .inspir_filter::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.333);
+            transform: scale(0.333); } }
+      .content .swiper-slide .con_inspir .inspir_filter div {
+        width: 3.2rem;
+        text-align: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center; }
+        .content .swiper-slide .con_inspir .inspir_filter div i {
+          width: 0.3rem;
+          height: 0.3rem;
+          margin-left: 0.1rem;
+          background: url(../../source/images/xiala.gif) no-repeat;
+          background-size: 0.2rem;
+          background-position: center; }
+      .content .swiper-slide .con_inspir .inspir_filter .inspir_space {
+        position: relative;
+        overflow: hidden; }
+        .content .swiper-slide .con_inspir .inspir_filter .inspir_space::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          content: "\0020";
+          border-color: #ccc;
+          border-style: solid;
+          border-width: 0 0 0 1px;
+          box-sizing: border-box;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+            .content .swiper-slide .con_inspir .inspir_filter .inspir_space::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+            .content .swiper-slide .con_inspir .inspir_filter .inspir_space::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.333);
+              transform: scale(0.333); } }
 
 .nav {
   width: 100%;

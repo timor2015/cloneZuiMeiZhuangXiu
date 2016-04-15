@@ -68,7 +68,16 @@ define({
 		        </div>\
 		        <div class="swiper-slide">2</div>\
 		        <div class="swiper-slide">3</div>\
-		        <div class="swiper-slide">4</div>\
+		        <div class="swiper-slide">\
+		        	<div class="con_inspir">\
+		        		<div class="inspir_filter">\
+		        			<div class="inspir_style"><p>全部风格</p><i></i></div>\
+		        			<div class="inspir_space"><p>全部空间</p><i></i></div>\
+		        		</div>\
+		        		<div class="inspir_con">\
+		        		</div>\
+		        	</div>\
+		        </div>\
 		        <div class="swiper-slide">5</div>\
 			</div>\
 		</div>\
