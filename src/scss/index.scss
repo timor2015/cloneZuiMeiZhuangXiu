@@ -105,6 +105,8 @@ li{
 	width : 100% !important;
 	@include flex(1);
 	overflow:hidden;
+	background : #e8e8e8;
+
 	.swiper-slide{
 		overflow : hidden;
 		.con_home{
