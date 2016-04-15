@@ -24,23 +24,46 @@ define({
 		        		</div>\
 		        		<div class="home_actions">\
 		        			<div class="server_design">\
-		        				<a href="#spa/server_design" class="iconfont">&#xe729;</a>\
-		        				<p>装修设计</p>\
+		        				<a href="#spa/server_design">\
+		        					<i class="iconfont">&#xe729;</i>\
+		        					<p>装修设计</p>\
+		        				</a>\
 		        			</div>\
 		        			<div class="server_day">\
-		        				<a href="#spa/server_day" class="iconfont">&#xe72e;</a>\
-		        				<p>写日记</p>\
+		        				<a href="#spa/server_day">\
+		        					<i class="iconfont">&#xe72e;</i>\
+		        					<p>写日记</p>\
+		        				</a>\
 		        			</div>\
 		        			<div class="server_cash">\
-		        				<a href="#spa/server_cash" class="iconfont">&#xe714;</a>\
-		        				<p>金币商城</p>\
+		        				<a href="#spa/server_cash">\
+		        					<i class="iconfont">&#xe714;</i>\
+		        					<p>金币商城</p>\
+		        				</a>\
 		        			</div>\
 		        			<div class="server_gua">\
-		        				<a href="#spa/server_gua">刮</a>\
-		        				<p>刮刮乐</p>\
+		        				<a href="#spa/server_gua">\
+			        				<i class="iconfont">刮</i>\
+			        				<p>刮刮乐</p>\
+		        				</a>\
 		        			</div>\
 		        		</div>\
-		        		<div class="home_cells"></div>\
+		        		<div class="home_cells">\
+		        			<div class="home_guess">\
+		        				<p>猜您喜欢</p>\
+		        				<div class="home_guess_con">\
+		        					<a href="#spa/home_guess">\
+		        						<img src="./source/images/home_guess.jpg" alt="" />\
+		        					</a>\
+		        				</div>\
+		        			</div>\
+		        			<div class="home_cell">\
+			        			<dl>\
+			        				<dt><a href="#spa/home_cell_author"></a></dt>\
+			        				<dd><a href="#spa/home_cell_content"></a></dd>\
+			        			</dl>\
+		        			</div>\
+		        		</div>\
 		        	</div>\
 		        </div>\
 		        <div class="swiper-slide">2</div>\
@@ -84,6 +107,7 @@ define({
 		var guideSwiper = new Swiper ('#swiper_home', {
 		    direction: 'horizontal',
 		    resistanceRatio : 0,
+		    longSwipesRatio : 0.2,
 		    loop: false,
 		    onSlideChangeEnd: function(swiper){
 		    	var go_num = guideSwiper.progress * 4;
@@ -98,7 +122,8 @@ define({
 		var home_ban_Swiper = new Swiper ('#home_ban_swiper', {
 		    direction: 'horizontal',
 		    resistanceRatio : 0.8,
-		    loop: false,
+		    loop: true,
+		    autoplay: 3000,
 		    pagination: '.swiper-pagination',
 		});
 

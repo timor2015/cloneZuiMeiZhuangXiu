@@ -215,7 +215,7 @@ li {
     .content .swiper-slide .con_home .home_actions {
       width: 100%;
       height: 2rem;
-      background: #fff;
+      background: #fafafa;
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
@@ -235,11 +235,11 @@ li {
         -webkit-box-pack: center;
         -webkit-justify-content: center;
         justify-content: center; }
-        .content .swiper-slide .con_home .home_actions div a {
+        .content .swiper-slide .con_home .home_actions div i {
           width: 1rem;
           height: 1rem;
           color: #fff;
-          display: inline-block;
+          display: block;
           border-radius: 50%;
           font-size: 0.5rem;
           text-align: center;
@@ -249,15 +249,57 @@ li {
         .content .swiper-slide .con_home .home_actions div p {
           font-size: 0.26rem;
           text-align: center; }
-      .content .swiper-slide .con_home .home_actions .server_design a {
+      .content .swiper-slide .con_home .home_actions .server_design i {
         background: #3fd3c8; }
-      .content .swiper-slide .con_home .home_actions .server_day a {
+      .content .swiper-slide .con_home .home_actions .server_day i {
         background: #3db1ea; }
-      .content .swiper-slide .con_home .home_actions .server_cash a {
+      .content .swiper-slide .con_home .home_actions .server_cash i {
         background: #ff6263; }
-      .content .swiper-slide .con_home .home_actions .server_gua a {
+      .content .swiper-slide .con_home .home_actions .server_gua i {
         font-family: "微软雅黑";
         background: #bc45df; }
+    .content .swiper-slide .con_home .home_cells {
+      background: #fff; }
+      .content .swiper-slide .con_home .home_cells .home_guess {
+        width: 100%;
+        overflow: hidden; }
+        .content .swiper-slide .con_home .home_cells .home_guess p {
+          margin: 0px;
+          font-size: 0.24rem;
+          text-align: center;
+          height: 0.6rem;
+          line-height: 0.7rem; }
+        .content .swiper-slide .con_home .home_cells .home_guess .home_guess_con {
+          padding-top: 0.16rem;
+          position: relative;
+          overflow: hidden; }
+          .content .swiper-slide .con_home .home_cells .home_guess .home_guess_con::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 1px 0 0 0;
+            box-sizing: border-box;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+              .content .swiper-slide .con_home .home_cells .home_guess .home_guess_con::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+              .content .swiper-slide .con_home .home_cells .home_guess .home_guess_con::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.333);
+                transform: scale(0.333); } }
+          .content .swiper-slide .con_home .home_cells .home_guess .home_guess_con img {
+            width: 100%; }
 
 .nav {
   width: 100%;
