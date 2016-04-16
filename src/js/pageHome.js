@@ -253,6 +253,8 @@ define({
 		    direction: 'horizontal',
 		    resistanceRatio : 0,
 		    longSwipesRatio : 0.2,
+		    longSwipesMs : 1000,
+		    touchAngle : 10,
 		    loop: false,
 		    onSlideChangeEnd: function(swiper){
 		    	var go_num = guideSwiper.progress * 4;
