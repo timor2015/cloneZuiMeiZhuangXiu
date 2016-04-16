@@ -32,7 +32,7 @@ var pageHome = {
   }
 }
 
-// 测试用页面
+// 用户主页
 var pageUser = {
   route : 'spa/user',
   classname : 'spa-user',
@@ -45,8 +45,21 @@ var pageUser = {
   }
 }
 
+// 搜索页面
+var pageSearch = {
+  route : 'spa/search',
+  classname : 'spa-search',
+  animate : 'slideInLeft',
+  view : function(){
+    var $page = this;
+    requirejs(['pageSearch'], function(viewData){
+      $doc.trigger('spa:initpage', [$page, viewData]);
+    })
+  }
+}
 
-$doc.trigger('spa:route', [pageGuide, pageHome, pageUser]);
+
+$doc.trigger('spa:route', [pageGuide, pageHome, pageUser, pageSearch]);
 
 
 

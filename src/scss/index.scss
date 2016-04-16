@@ -118,6 +118,7 @@ li{
 			.home_ban{
 				width: 100%;
 				height : 2rem;
+				background : #c7c6c6;
 				overflow : hidden;
 				img{
 					width : 100%;
@@ -213,13 +214,14 @@ li{
 						position: absolute;
 						left : 0.4rem;
 						top : 0.5rem;
-						line-height : 0.4rem;
+						line-height : 0.36rem;
 						padding : 0px 0.2rem;
 						background : #000;
+						font-size : 0.3rem;
 						opacity : 0.3;
 						color : #fff;
 						i{
-							font-size : 0.4rem;
+							font-size : 0.3rem;
 						}
 						@include border-radius(0.24rem);
 					}
@@ -237,6 +239,7 @@ li{
 						position: absolute;
 						top : -0.8rem;
 						left : 2.4rem;
+						border: 1px solid #fff;
 						@include border-radius(0.8rem);
 						a{
 							img{
@@ -259,6 +262,86 @@ li{
 						@include justify-content(center);
 					}
 				}
+			}
+		}
+		.con_choice{
+			width : 100%;
+			dl{
+				margin : 0.1rem;
+				width : 6.2rem;
+				position: relative;
+				dd{
+					width : 100%;
+					img{
+						width : 100%;
+					}
+				}
+				.choice_cell_focus{
+					position: absolute;
+					left : 0.2rem;
+					top : 0.1rem;
+					width : 2rem;
+					height : 0.36rem;
+					color : #fff;
+					padding: 0px 0.1rem;
+					background : #000;
+					opacity : 0.2;
+					@include border-radius(0.2rem);
+					@include flexbox(flex);
+					@include justify-content(space-around);
+					i{
+						font-size : 0.3rem;
+					}
+					span{
+						margin-top : -0.1rem;
+					}
+				}
+				.choice_cell_status{
+					width : 0.6rem;
+					height : 0.32rem;
+					line-height : 0.36rem;
+					position: absolute;
+					right : 0.3rem;
+					top : 0px;
+					color : #fff;
+					text-align : center;
+				}
+				.choice_in{
+					background : green;
+				}
+				.choice_notin{
+					background : red;
+				}
+				dt{
+					position: absolute;
+					left : 0px; 
+					bottom : 0.1rem;
+					@include flexbox(flex);
+					@include justify-content(flex-start);
+					.choice_author{
+						width : 0.6rem;
+						height : 0.6rem;
+						border-radius : 0.3rem;
+						overflow : hidden;
+						margin : 0px 0.2rem;
+						border:1px solid #fff;
+						img{
+							width : 0.6rem;
+							height : 0.6rem;
+						}
+					}
+					.choice_info{
+						width : 100%;
+						color : #fff;
+						.choice_info_title{
+							font-size : 0.32rem;
+						}
+						.choice_info_city{
+							font-size : 0.24rem;
+						}
+					}
+				}
+				
 			}
 		}
 		.con_inspir{
@@ -394,5 +477,67 @@ li{
 		width : inherit !important;
 		@include flex(1);
 		background : #fff;
+	}
+}
+
+#search{
+	width : 100%;
+	height : 100%;
+	background : #fff;
+	.sear_int{
+		width : 100%;
+		height : 0.82rem;
+		@include flexbox(flex);
+		@include justify-content(space-around);
+		@include border($border-width : 0 0 1px 0, $border-color: #ccc);
+		.sear_back{
+			width : 1rem;
+			height : 0.82rem;
+			line-height : 0.82rem;
+			text-align : center;
+			color : $iconColor;
+			font-size : 0.36rem;
+			font-weight : 100;
+		}
+		.sear_get{
+			width : 5.4rem;
+			height : 0.82rem;
+			position: relative;
+			input{
+				position: absolute;
+				width : 5rem;
+				left : 0px;
+				top : 0.15rem;
+				outline : none;
+				height : 0.48rem;
+				border : 0 none;
+				font-size : 0.36rem;
+				text-indent : 0.42rem;
+				border-bottom : 1px solid $iconColor;
+			}
+			.sear_magn{
+				color : $iconColor;
+				position: absolute;
+				left : 3px;
+				bottom : 0.2rem;
+				font-size : 0.36rem;
+			}
+		}
+	}
+	.sear_con{
+		width : 100%;
+		.sear_hot{
+			width : 100%;
+			padding : 0.5rem 0.2rem;
+			h3{
+				font-size : 0.4rem;
+				margin : 0px;
+			}
+			a{
+				padding : 0.1rem 0.2rem;
+				border: 1px solid #ccc;
+				border-radius : 0.25rem;
+			}
+		}
 	}
 }

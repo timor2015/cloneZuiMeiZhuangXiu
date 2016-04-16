@@ -194,7 +194,124 @@ define({
 		        		</dl>\
 		        	</div>\
 		        </div>\
-		        <div class="swiper-slide">\
+		        <div class="swiper-slide" id="scroll3">\
+		        	<div class="con_choice">\
+		        		<dl><a href=#spa/choice_cell">\
+		        			<dd><img src="./source/images/choice_1.jpg"/></dd>\
+		        			<dd class="choice_cell_focus">\
+		        				<div class="choice_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>3245</span>\
+		        				</div>\
+		        				<div class="choice_cell_praise">\
+		        					<i class="iconfont">&#xe6f6;</i>\
+		        					<span>234</span>\
+		        				</div>\
+		        			</dd>\
+		        			<dd class="choice_cell_status choice_in">入住</dd>\
+		        			<dt>\
+		        				<div class="choice_author">\
+		        					<img src="./source/images/designer6.jpg"/>\
+		        				</div>\
+		        				<div class="choice_info">\
+		        					<div class="choice_info_title">[入住]二手房软装后焕然一新</div>\
+		        					<div class="choice_info_city">[武汉]2室2厅1厨1卫/美式</div>\
+		        				</div>\
+		        			</dt>\
+		        		</a></dl>\
+		        		<dl><a href=#spa/choice_cell">\
+		        			<dd><img src="./source/images/choice_2.jpg"/></dd>\
+		        			<dd class="choice_cell_focus">\
+		        				<div class="choice_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>76245</span>\
+		        				</div>\
+		        				<div class="choice_cell_praise">\
+		        					<i class="iconfont">&#xe6f6;</i>\
+		        					<span>3145</span>\
+		        				</div>\
+		        			</dd>\
+		        			<dd class="choice_cell_status choice_notin">精选</dd>\
+		        			<dt>\
+		        				<div class="choice_author">\
+		        					<img src="./source/images/designer2.jpg"/>\
+		        				</div>\
+		        				<div class="choice_info">\
+		        					<div class="choice_info_title">[精选]60平宽敞的一室户格局</div>\
+		        					<div class="choice_info_city">[杭州]2室2厅1厨1卫/宜家</div>\
+		        				</div>\
+		        			</dt>\
+		        		</a></dl>\
+		        		<dl><a href=#spa/choice_cell">\
+		        			<dd><img src="./source/images/choice_3.jpg"/></dd>\
+		        			<dd class="choice_cell_focus">\
+		        				<div class="choice_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>7645</span>\
+		        				</div>\
+		        				<div class="choice_cell_praise">\
+		        					<i class="iconfont">&#xe6f6;</i>\
+		        					<span>8124</span>\
+		        				</div>\
+		        			</dd>\
+		        			<dd class="choice_cell_status choice_in">入住</dd>\
+		        			<dt>\
+		        				<div class="choice_author">\
+		        					<img src="./source/images/designer4.jpg"/>\
+		        				</div>\
+		        				<div class="choice_info">\
+		        					<div class="choice_info_title">[入住]小窝养成记</div>\
+		        					<div class="choice_info_city">[上海]2室2厅1厨1卫/现代</div>\
+		        				</div>\
+		        			</dt>\
+		        		</a></dl>\
+		        		<dl><a href=#spa/choice_cell">\
+		        			<dd><img src="./source/images/choice_4.jpg"/></dd>\
+		        			<dd class="choice_cell_focus">\
+		        				<div class="choice_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>1745</span>\
+		        				</div>\
+		        				<div class="choice_cell_praise">\
+		        					<i class="iconfont">&#xe6f6;</i>\
+		        					<span>6234</span>\
+		        				</div>\
+		        			</dd>\
+		        			<dd class="choice_cell_status choice_in">入住</dd>\
+		        			<dt>\
+		        				<div class="choice_author">\
+		        					<img src="./source/images/designer4.jpg"/>\
+		        				</div>\
+		        				<div class="choice_info">\
+		        					<div class="choice_info_title">[入住]IT男和设计女的宅窝</div>\
+		        					<div class="choice_info_city">[嘉兴]2室2厅1厨1卫/现代</div>\
+		        				</div>\
+		        			</dt>\
+		        		</a></dl>\
+		        		<dl><a href=#spa/choice_cell">\
+		        			<dd><img src="./source/images/choice_5.jpg"/></dd>\
+		        			<dd class="choice_cell_focus">\
+		        				<div class="choice_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>345</span>\
+		        				</div>\
+		        				<div class="choice_cell_praise">\
+		        					<i class="iconfont">&#xe6f6;</i>\
+		        					<span>34</span>\
+		        				</div>\
+		        			</dd>\
+		        			<dd class="choice_cell_status choice_notin">精选</dd>\
+		        			<dt>\
+		        				<div class="choice_author">\
+		        					<img src="./source/images/designer5.jpg"/>\
+		        				</div>\
+		        				<div class="choice_info">\
+		        					<div class="choice_info_title">[入住]自己设计的小复式</div>\
+		        					<div class="choice_info_city">[北京]2室2厅1厨1卫/欧式</div>\
+		        				</div>\
+		        			</dt>\
+		        		</a></dl>\
+		        	</div>\
 		        </div>\
 		        <div class="swiper-slide" id="scroll4">\
 		        	<div class="con_inspir">\
@@ -254,7 +371,7 @@ define({
 		    resistanceRatio : 0,
 		    longSwipesRatio : 0.2,
 		    touchAngle : 20,
-		    threshold : 20,
+		    threshold : 10,
 		    loop: false,
 		    onSlideChangeEnd: function(swiper){
 		    	var go_num = guideSwiper.progress * 4;
@@ -298,6 +415,11 @@ define({
 			});
 
 			var myScroll2 = new IScroll('#scroll2',{
+				mouseWheel: true,
+				scrollbars: true
+			});
+
+			var myScroll3 = new IScroll('#scroll3',{
 				mouseWheel: true,
 				scrollbars: true
 			});
