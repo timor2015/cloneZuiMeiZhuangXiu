@@ -419,14 +419,14 @@ li {
           justify-content: flex-start; }
           .content .swiper-slide .con_choice dl dt .choice_author {
             width: 0.6rem;
-            height: 0.6rem;
+            height: 0.5rem;
             border-radius: 0.3rem;
             overflow: hidden;
             margin: 0px 0.2rem;
             border: 1px solid #fff; }
             .content .swiper-slide .con_choice dl dt .choice_author img {
               width: 0.6rem;
-              height: 0.6rem; }
+              height: 0.5rem; }
           .content .swiper-slide .con_choice dl dt .choice_info {
             width: 100%;
             color: #fff; }
