@@ -327,8 +327,7 @@ li {
           border-radius: 0.24rem;
           background-clip: padding-box !important; }
           .content .swiper-slide .con_case dl .case_cell .case_cell_watches i {
-            font-size: 0.3rem;
-            line-height: 0.4rem; }
+            font-size: 0.4rem; }
       .content .swiper-slide .con_case dl .case_title {
         position: relative;
         font-size: 0.32rem;

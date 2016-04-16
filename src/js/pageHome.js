@@ -5,7 +5,7 @@ define({
 	<header class="header">\
 		<div class="user"><a href="#spa/user" data-animate="slideInLeft" class="iconfont">&#xe71a;</a></div>\
 		<div class="title">发现</div>\
-		<div class="find"><a href="#spa/find" class="iconfont">&#xe725;</a></div>\
+		<div class="find"><a href="#spa/search" class="iconfont">&#xe725;</a></div>\
 	</header>\
 	<div class="content">\
 		<div class="swiper-container" id="swiper_home">\
@@ -253,8 +253,8 @@ define({
 		    direction: 'horizontal',
 		    resistanceRatio : 0,
 		    longSwipesRatio : 0.2,
-		    longSwipesMs : 1000,
-		    touchAngle : 10,
+		    touchAngle : 20,
+		    threshold : 20,
 		    loop: false,
 		    onSlideChangeEnd: function(swiper){
 		    	var go_num = guideSwiper.progress * 4;
