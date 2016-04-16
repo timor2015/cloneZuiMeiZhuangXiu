@@ -68,13 +68,21 @@ define({
 		        </div>\
 		        <div class="swiper-slide">2</div>\
 		        <div class="swiper-slide">3</div>\
-		        <div class="swiper-slide">\
+		        <div class="swiper-slide" id="scroll4">\
 		        	<div class="con_inspir">\
-		        		<div class="inspir_filter">\
-		        			<div class="inspir_style"><p>全部风格</p><i></i></div>\
-		        			<div class="inspir_space"><p>全部空间</p><i></i></div>\
-		        		</div>\
 		        		<div class="inspir_con">\
+		        			<div class="inspir_left">\
+			        			<a href="#spa/inspir_cell"><img src="./source/images/inspir_1.jpg"/></a>\
+			        			<a href="#spa/inspir_cell"><img src="./source/images/inspir_4.jpg"/></a>\
+			        			<a href="#spa/inspir_cell"><img src="./source/images/inspir_5.jpg"/></a>\
+			        			<a href="#spa/inspir_cell"><img src="./source/images/inspir_8.jpg"/></a>\
+		        			</div>\
+		        			<div class="inspir_right">\
+		        				<a href="#spa/inspir_cell"><img src="./source/images/inspir_2.jpg"/></a>\
+		        				<a href="#spa/inspir_cell"><img src="./source/images/inspir_3.jpg"/></a>\
+		        				<a href="#spa/inspir_cell"><img src="./source/images/inspir_6.jpg"/></a>\
+			        			<a href="#spa/inspir_cell"><img src="./source/images/inspir_7.jpg"/></a>\
+		        			</div>\
 		        		</div>\
 		        	</div>\
 		        </div>\
@@ -151,10 +159,15 @@ define({
 		
 		// 固定swiper高度
 		$('#swiper_home').css('height', $('#swiper_home').parent().css('height'));
-		
+
 		// 区域滚动效果
 		setTimeout(function(){
 			var myScroll1 = new IScroll('#scroll1',{
+				mouseWheel: true,
+				scrollbars: true
+			});
+
+			var myScroll4 = new IScroll('#scroll4',{
 				mouseWheel: true,
 				scrollbars: true
 			});
