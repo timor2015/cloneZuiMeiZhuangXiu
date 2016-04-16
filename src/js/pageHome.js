@@ -66,8 +66,136 @@ define({
 		        		</div>\
 		        	</div>\
 		        </div>\
-		        <div class="swiper-slide">2</div>\
-		        <div class="swiper-slide">3</div>\
+		        <div class="swiper-slide" id="scroll2">\
+		        	<div class="con_case">\
+		        		<dl>\
+		        			<dd class="case_cell">\
+		        				<a href="#spa/case_cell">\
+		        					<img src="./source/images/case1.jpg"/>\
+		        				</a>\
+		        				<a href="add_watches" class="case_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>21万+</span>\
+		        				</a>\
+		        			</dd>\
+		        			<dt class="case_title">\
+		        				<div class="case_author">\
+			        				<a href="#spa/designer">\
+			        					<img src="./source/images/designer1.jpg"/>\
+			        				</a>\
+			        			</div>\
+			        			<div class="case_title_con">休闲中式</div>\
+			        			<div class="case_designer">Rapheal[上海]</div>\
+			        			<div class="case_info">\
+			        				<div class="case_reser">\
+			        					<i class="iconfont">&#xe72d;</i>\
+			        					<span>5</span>人预约\
+			        				</div>\
+			        				<div style="width:1rem; height:0.3rem"></div>\
+			        				<div class="case_price">\
+			        					<i class="iconfont">&#xe711;</i>\
+			        					<span>5</span>元/㎡\
+			        				</div>\
+			        			</div>\
+		        			</dt>\
+		        		</dl>\
+		        		<dl>\
+		        			<dd class="case_cell">\
+		        				<a href="#spa/case_cell">\
+		        					<img src="./source/images/case2.jpg"/>\
+		        				</a>\
+		        				<a href="add_watches" class="case_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>12万+</span>\
+		        				</a>\
+		        			</dd>\
+		        			<dt class="case_title">\
+		        				<div class="case_author">\
+			        				<a href="#spa/designer">\
+			        					<img src="./source/images/designer2.jpg"/>\
+			        				</a>\
+			        			</div>\
+			        			<div class="case_title_con">美式小家养成记</div>\
+			        			<div class="case_designer">蚂蚁设计张欢[重庆]</div>\
+			        			<div class="case_info">\
+			        				<div class="case_reser">\
+			        					<i class="iconfont">&#xe72d;</i>\
+			        					<span>2</span>人预约\
+			        				</div>\
+			        				<div style="width:1rem; height:0.3rem"></div>\
+			        				<div class="case_price">\
+			        					<i class="iconfont">&#xe711;</i>\
+			        					<span>60-100</span>元/㎡\
+			        				</div>\
+			        			</div>\
+		        			</dt>\
+		        		</dl>\
+		        		<dl>\
+		        			<dd class="case_cell">\
+		        				<a href="#spa/case_cell">\
+		        					<img src="./source/images/case3.jpg"/>\
+		        				</a>\
+		        				<a href="add_watches" class="case_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>5万+</span>\
+		        				</a>\
+		        			</dd>\
+		        			<dt class="case_title">\
+		        				<div class="case_author">\
+			        				<a href="#spa/designer">\
+			        					<img src="./source/images/designer3.jpg"/>\
+			        				</a>\
+			        			</div>\
+			        			<div class="case_title_con">简约自然之家</div>\
+			        			<div class="case_designer">崔与娟[上海]</div>\
+			        			<div class="case_info">\
+			        				<div class="case_reser">\
+			        					<i class="iconfont">&#xe72d;</i>\
+			        					<span>53</span>人预约\
+			        				</div>\
+			        				<div style="width:1rem; height:0.3rem"></div>\
+			        				<div class="case_price">\
+			        					<i class="iconfont">&#xe711;</i>\
+			        					<span>150</span>元/㎡\
+			        				</div>\
+			        			</div>\
+		        			</dt>\
+		        		</dl>\
+		        		<dl>\
+		        			<dd class="case_cell">\
+		        				<a href="#spa/case_cell">\
+		        					<img src="./source/images/case4.jpg"/>\
+		        				</a>\
+		        				<a href="add_watches" class="case_cell_watches">\
+		        					<i class="iconfont">&#xe718;</i>\
+		        					<span>56万+</span>\
+		        				</a>\
+		        			</dd>\
+		        			<dt class="case_title">\
+		        				<div class="case_author">\
+			        				<a href="#spa/designer">\
+			        					<img src="./source/images/designer4.jpg"/>\
+			        				</a>\
+			        			</div>\
+			        			<div class="case_title_con">风情小家</div>\
+			        			<div class="case_designer">李宝珍[天津]</div>\
+			        			<div class="case_info">\
+			        				<div class="case_reser">\
+			        					<i class="iconfont">&#xe72d;</i>\
+			        					<span>3</span>人预约\
+			        				</div>\
+			        				<div style="width:1rem; height:0.3rem"></div>\
+			        				<div class="case_price">\
+			        					<i class="iconfont">&#xe711;</i>\
+			        					<span>100-500</span>元/㎡\
+			        				</div>\
+			        			</div>\
+		        			</dt>\
+		        		</dl>\
+		        	</div>\
+		        </div>\
+		        <div class="swiper-slide">\
+		        </div>\
 		        <div class="swiper-slide" id="scroll4">\
 		        	<div class="con_inspir">\
 		        		<div class="inspir_con">\
@@ -139,7 +267,7 @@ define({
 		var home_ban_Swiper = new Swiper ('#home_ban_swiper', {
 		    direction: 'horizontal',
 		    resistanceRatio : 0.8,
-		    loop: true,
+		    loop: false,
 		    autoplay: 3000,
 		    pagination: '.swiper-pagination',
 		});
@@ -163,6 +291,11 @@ define({
 		// 区域滚动效果
 		setTimeout(function(){
 			var myScroll1 = new IScroll('#scroll1',{
+				mouseWheel: true,
+				scrollbars: true
+			});
+
+			var myScroll2 = new IScroll('#scroll2',{
 				mouseWheel: true,
 				scrollbars: true
 			});

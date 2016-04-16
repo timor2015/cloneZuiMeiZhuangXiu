@@ -3,6 +3,10 @@
 
 // 图标默认颜色
 $iconColor : #93c757;
+dl,dd{
+	margin : 0px;
+}
+img{vertical-align:top; display:block}
 
 html, body{
 	width : 100%;
@@ -106,7 +110,7 @@ li{
 	width : 100% !important;
 	@include flex(1);
 	overflow:hidden;
-	background : #e8e8e8;
+	//background : #e8e8e8;
 
 	.swiper-slide{
 		overflow : hidden;
@@ -189,6 +193,71 @@ li{
 						img{
 							width : 100%;
 						}
+					}
+				}
+			}
+		}
+		.con_case{
+			dl{
+				width : 100%;
+				.case_cell{
+					margin : 0px;
+					width : 100%;
+					position: relative;
+					a{
+						img{
+							width : 100%;
+						}
+					}
+					.case_cell_watches{
+						position: absolute;
+						left : 0.4rem;
+						top : 0.5rem;
+						line-height : 0.4rem;
+						padding : 0px 0.2rem;
+						background : #000;
+						opacity : 0.3;
+						color : #fff;
+						i{
+							font-size : 0.3rem;
+							line-height : 0.4rem;
+						}
+						@include border-radius(0.24rem);
+					}
+				}
+				.case_title{
+					position: relative;
+					font-size : 0.32rem;
+					text-align : center;
+					padding-top:0.9rem;
+					padding-bottom : 0.4rem;
+					.case_author{
+						width : 1.6rem;
+						height : 1.6rem;
+						overflow : hidden;
+						position: absolute;
+						top : -0.8rem;
+						left : 2.4rem;
+						@include border-radius(0.8rem);
+						a{
+							img{
+								width : 1.6rem;
+								height : 1.6rem;
+							}
+						}
+					}
+					.case_title_con{
+						font-size : 0.4rem;
+						font-weight : 900;
+					}
+					.case_designer{
+						color : #999;
+						padding: 0.1rem 0px 0.15rem 0px;
+					}
+					.case_info{
+						color : $iconColor;
+						@include flexbox(flex);
+						@include justify-content(center);
 					}
 				}
 			}
