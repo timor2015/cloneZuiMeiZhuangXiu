@@ -191,7 +191,34 @@ li {
     line-height: 0.74rem;
     font-size: 0.34rem;
     font-weight: 900;
-    color: #333; }
+    color: #333;
+    width: 2.6rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .header .title div {
+      padding: 0px 0.3rem 0 0.2rem;
+      height: 0.5rem;
+      font-size: 0.28rem;
+      background: #eee;
+      font-weight: 100;
+      line-height: 0.5rem; }
+    .header .title .title_nav_choice {
+      padding: 0px 0.2rem 0 0.3rem;
+      border-radius: 0.3rem 0 0 0.3rem;
+      background-clip: padding-box !important; }
+    .header .title .title_nav_least {
+      border-radius: 0 0.3rem 0.3rem 0;
+      background-clip: padding-box !important; }
+    .header .title .title_nav_act {
+      background: #93c757;
+      color: #fff; }
   .header .find {
     width: 0.6rem;
     display: -webkit-box;

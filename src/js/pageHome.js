@@ -4,7 +4,9 @@ define({
 	<div class="container">\
 	<header class="header">\
 		<div class="user"><a href="#spa/user" data-animate="slideInLeft" class="iconfont">&#xe71a;</a></div>\
-		<div class="title">发现</div>\
+		<div class="title">\
+			发现\
+		</div>\
 		<div class="find"><a href="#spa/search" class="iconfont">&#xe725;</a></div>\
 	</header>\
 	<div class="content">\
@@ -363,6 +365,7 @@ define({
 	// 初始化出5个块内容
 	beforeopen : function(pageData){
 		var now_active = 0;
+		var title_nav = 0;
 		// 强制定义中间内容框的高度
 		$('#swiper_home').css('height', $('#swiper_home').parent().css('height'));
 		// 初始化内容区域的swiper滑动
@@ -378,7 +381,7 @@ define({
 		        $('nav li').eq(now_active).removeClass('nav_act');
 		        $('nav li').eq(go_num).addClass('nav_act');
 		        now_active = go_num;
-		        //console.log(now_active);
+		        checkoutTitle(now_active);
 		    },
 		});
 
@@ -400,8 +403,22 @@ define({
 					$('nav li').eq(now_active).removeClass('nav_act');
 					$(this).addClass('nav_act');
 					now_active = $(this).index();
+					checkoutTitle(now_active);
 				})
 			})    
+		})();
+
+		// 顶部精选和最新内容切换
+		(function(){
+			$('.title div').each(function(){
+				$(this).click(function(){
+					if( title_nav != $(this).index() ){
+						$(this).addClass('title_nav_act');
+						$('.title div').eq(title_nav).removeClass('title_nav_act');
+						title_nav = $(this).index();
+					}
+				})
+			})
 		})();
 		
 		// 固定swiper高度
@@ -429,6 +446,10 @@ define({
 				scrollbars: true
 			});
 		}, 100)
-		
+		var string_title = '<div class="title_nav_choice title_nav_act">精选</div><div class="title_nav_least">最新</div>';
+		var arrTitle = ['发现', '案例', string_title, '灵感', '攻略'];
+		function checkoutTitle(now_active){
+			$('.title').html(arrTitle[now_active]);
+		}
 	}
 })

@@ -94,6 +94,29 @@ li{
 		font-size : 0.34rem;
 		font-weight : 900;
 		color : #333;
+		width : 2.6rem;
+		@include flexbox(flex);
+		@include justify-content(center);
+		@include align-items(center);
+		div{
+			padding : 0px 0.3rem 0 0.2rem;
+			height : 0.5rem;
+			font-size : 0.28rem;
+			background : #eee;
+			font-weight : 100;
+			line-height : 0.5rem;
+		}
+		.title_nav_choice{
+			padding : 0px 0.2rem 0 0.3rem;
+			@include border-radius(0.3rem 0 0 0.3rem);
+		}
+		.title_nav_least{
+			@include border-radius( 0 0.3rem 0.3rem 0);
+		}
+		.title_nav_act{
+			background : $iconColor;
+			color : #fff;
+		}
 	}
 	.find{ 
 		width : 0.6rem;
