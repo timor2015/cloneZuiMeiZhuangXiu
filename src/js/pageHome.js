@@ -447,28 +447,28 @@ define({
 			});
 			myScroll2.on('scroll', function(){
 				var nowPos = $('.con_case')[0].offsetHeight - $('.con_case').parent()[0].offsetHeight - parseInt(this.y)*(-1);
-				if ( nowPos <= 200 && ajaxOff == false ) {
+				if ( nowPos <= 50 && ajaxOff == false ) {
 					console.log('go');
 					$.post(
-						'http://tb1483883.mvip7.xyz/test01.php',
+						'http://tb1483883.mvip7.xyz/con_case.php',
 						function(data){
-							console.log(data);
+							var caseInfo = JSON.parse(data);
+							var str = '';
+							for (var i = 0; i < caseInfo.length; i++) {
+								str += '<dl><dd class="case_cell"><a href="#spa/case_cell"><img src="'+caseInfo[i].imgurl+'"/></a><a href="add_watches" class="case_cell_watches"><i class="iconfont">&#xe718;</i><span>'+caseInfo[i].watches+'</span></a></dd><dt class="case_title"><div class="case_author"><a href="#spa/designer"><img src="'+caseInfo[i].author_img+'"/></a></div><div class="case_title_con">'+caseInfo[i].title+'</div><div class="case_designer">'+caseInfo[i].designer+'</div><div class="case_info"><div class="case_reser"><i class="iconfont">&#xe72d;</i><span>'+caseInfo[i].reservation+'</span>人预约</div><div style="width:1rem; height:0.3rem"></div><div class="case_price"><i class="iconfont">&#xe711;</i><span>'+caseInfo[i].price+'</span>元/㎡</div></div></dt></dl>';
+							}
+							$('.con_case')[0].innerHTML += str;
+							myScroll2.refresh();
+							setTimeout(function(){
+								ajaxOff = false;
+							}, 800);
 						}
 					);
 					ajaxOff = true;
 				}
 			});
 
-			// var options_case_more = {
-			// 	type : 'GET',
-			// 	url : 'http://tb1483883.mvip7.xyz/test01.php',
-			// 	dataType : 'jsonp',
-			// 	timeout : 3000,
-			// 	jsonpCallback : handle_data,
-			// 	success : function(data){
-			// 		console.log(data);
-			// 	}
-			// }
+			
 			function handle_data(data){
 				console.log(data);
 			}
