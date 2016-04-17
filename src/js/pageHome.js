@@ -410,14 +410,11 @@ define({
 
 		// 顶部精选和最新内容切换
 		(function(){
-			$('.title div').each(function(){
-				$(this).click(function(){
-					if( title_nav != $(this).index() ){
-						$(this).addClass('title_nav_act');
-						$('.title div').eq(title_nav).removeClass('title_nav_act');
-						title_nav = $(this).index();
-					}
-				})
+			$('.title').on('click', function(e){
+				if ( e.target.tagName.toLowerCase() == 'p') {
+					$(e.target).toggleClass('title_nav_act');
+					$(e.target).siblings().toggleClass('title_nav_act');
+				}
 			})
 		})();
 		
@@ -446,7 +443,7 @@ define({
 				scrollbars: true
 			});
 		}, 100)
-		var string_title = '<div class="title_nav_choice title_nav_act">精选</div><div class="title_nav_least">最新</div>';
+		var string_title = '<p class="title_nav_choice title_nav_act">精选</p><p class="title_nav_least">最新</p>';
 		var arrTitle = ['发现', '案例', string_title, '灵感', '攻略'];
 		function checkoutTitle(now_active){
 			$('.title').html(arrTitle[now_active]);
