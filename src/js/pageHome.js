@@ -418,28 +418,73 @@ define({
 			})
 		})();
 		
+		//console.log($('#scroll2')[0]);
+		$('#scroll2').on('scroll', function(){
+			console.log(234);
+		})
+
 		// 固定swiper高度
 		$('#swiper_home').css('height', $('#swiper_home').parent().css('height'));
 
+
+		var ajaxOff = false;
 		// 区域滚动效果
 		setTimeout(function(){
 			var myScroll1 = new IScroll('#scroll1',{
 				mouseWheel: true,
+				fadeScrollbars : true,
+				interactiveScrollbars : true,
 				scrollbars: true
 			});
 
 			var myScroll2 = new IScroll('#scroll2',{
+				probeType: 3,
 				mouseWheel: true,
-				scrollbars: true
+				fadeScrollbars : true,
+				interactiveScrollbars : true,
+				scrollbars: true,
+				
 			});
+			myScroll2.on('scroll', function(){
+				var nowPos = $('.con_case')[0].offsetHeight - $('.con_case').parent()[0].offsetHeight - parseInt(this.y)*(-1);
+				if ( nowPos <= 200 && ajaxOff == false ) {
+					console.log('go');
+					$.post(
+						'http://tb1483883.mvip7.xyz/test01.php',
+						function(data){
+							console.log(data);
+						}
+					);
+					ajaxOff = true;
+				}
+			});
+
+			// var options_case_more = {
+			// 	type : 'GET',
+			// 	url : 'http://tb1483883.mvip7.xyz/test01.php',
+			// 	dataType : 'jsonp',
+			// 	timeout : 3000,
+			// 	jsonpCallback : handle_data,
+			// 	success : function(data){
+			// 		console.log(data);
+			// 	}
+			// }
+			function handle_data(data){
+				console.log(data);
+			}
+			
 
 			var myScroll3 = new IScroll('#scroll3',{
 				mouseWheel: true,
+				fadeScrollbars : true,
+				interactiveScrollbars : true,
 				scrollbars: true
 			});
 
 			var myScroll4 = new IScroll('#scroll4',{
 				mouseWheel: true,
+				fadeScrollbars : true,
+				interactiveScrollbars : true,
 				scrollbars: true
 			});
 		}, 100)

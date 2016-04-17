@@ -4,7 +4,7 @@ define({
 		<div class="user_title">\
 			<div class="user_title_left">\
 				<div class="user_title_back">\
-					<a href="#spa/home" class="iconfont">&#xe6fa;</a>\
+					<a href="#spa/home" onfocus="this.blur()" class="iconfont">&#xe6fa;</a>\
 				</div>\
 				<div class="user_title_city">\
 					<a href="#spa/citys" data-animate="slideInLeft">北京</a>\
