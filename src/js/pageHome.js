@@ -438,16 +438,18 @@ define({
 			});
 
 			var myScroll2 = new IScroll('#scroll2',{
-				probeType: 3,
+				probeType: 3,	// 用于检测页面滚动位置
 				mouseWheel: true,
 				fadeScrollbars : true,
 				interactiveScrollbars : true,
 				scrollbars: true,
 				
 			});
+
+			// 案例页面的下拉加载更多  使用服务器端的allow-origin设定
 			myScroll2.on('scroll', function(){
 				var nowPos = $('.con_case')[0].offsetHeight - $('.con_case').parent()[0].offsetHeight - parseInt(this.y)*(-1);
-				if ( nowPos <= 50 && ajaxOff == false ) {
+				if ( nowPos <= 100 && ajaxOff == false ) {
 					console.log('go');
 					$.post(
 						'http://tb1483883.mvip7.xyz/con_case.php',
@@ -467,18 +469,44 @@ define({
 					ajaxOff = true;
 				}
 			});
-
-			
-			function handle_data(data){
-				console.log(data);
-			}
 			
 
 			var myScroll3 = new IScroll('#scroll3',{
+				probeType: 3,
 				mouseWheel: true,
 				fadeScrollbars : true,
 				interactiveScrollbars : true,
 				scrollbars: true
+			});
+
+			// jsonp 测试
+			$('.con_choice>dl img').click(function(){
+				console.log('go');
+			})
+
+			// 日记页面的下拉加载更多
+			myScroll3.on('scroll', function(){
+				var nowPos = $('.con_choice')[0].offsetHeight - $('.con_choice').parent()[0].offsetHeight - parseInt(this.y)*(-1);
+				if ( nowPos <= 100 && ajaxOff == false ) {
+					console.log('go');
+					$.ajax({
+						type : 'GET',
+				        url: 'http://tb1483883.mvip7.xyz/con_choice.php?callback=?',
+				        dataType: "jsonp",
+				        jsonp: 'callback',
+				        jsonpCallback:"success_jsonpCallback",
+				        success: function (data) {
+				            console.log(data);
+
+				            myScroll3.refresh();
+							setTimeout(function(){
+								ajaxOff = false;
+							}, 800);
+				        }
+				    });
+
+					ajaxOff = true;
+				}
 			});
 
 			var myScroll4 = new IScroll('#scroll4',{
