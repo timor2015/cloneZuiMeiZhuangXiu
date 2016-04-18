@@ -518,6 +518,7 @@ define({
 			});
 
 			var myScroll4 = new IScroll('#scroll4',{
+				probeType: 3,
 				mouseWheel: true,
 				fadeScrollbars : true,
 				interactiveScrollbars : true,
@@ -528,6 +529,36 @@ define({
 				myScroll4.refresh();
 			});
 
+			// 轮播图无限下拉
+			myScroll4.on('scroll', function(){
+				var nowPos = $('.con_inspir')[0].offsetHeight - $('.con_inspir').parent()[0].offsetHeight - parseInt(this.y)*(-1);
+				if ( nowPos <= 100 && ajaxOff == false ) {
+					$.ajax({
+						type : 'POST',
+				        url: 'http://tb1483883.mvip7.xyz/con_inspir.php',
+				        dataType: "jsonp",
+				        jsonp: 'callback',
+				        jsonpCallback:"addInspir",
+				        timeout : 3000,
+				        success: function (data) {
+				            for (var i = 0; i < data.length; i++) {
+				            	var str = '<a href="#spa/inspir_cell"><img src="'+data[i].imgurl+'"/></a>';
+				            	if($('.inspir_left')[0].offsetHeight <= $('.inspir_right')[0].offsetHeight){
+				            		$('.inspir_left')[0].innerHTML += str;
+				            	}else{
+				            		$('.inspir_right')[0].innerHTML += str;
+				            	}
+				            }
+				            console.log(3214)
+				            myScroll4.refresh();
+							setTimeout(function(){
+								ajaxOff = false;
+							}, 800);
+				        }
+				    });
+					ajaxOff = true;
+				}
+			});
 
 		}, 100)
 
