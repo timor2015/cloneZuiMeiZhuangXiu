@@ -445,6 +445,7 @@ define({
 				scrollbars: true,
 				
 			});
+			myScroll2.refresh();
 
 			// 案例页面的下拉加载更多  使用服务器端的allow-origin设定
 			myScroll2.on('scroll', function(){
