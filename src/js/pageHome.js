@@ -482,25 +482,30 @@ define({
 				scrollbars: true
 			});
 
-			// jsonp 测试
-			$('.con_choice>dl img').click(function(){
-				console.log('go');
-			})
+			myScroll3.on('scrollStart', function(){
+				myScroll3.refresh();
+			});
+
 
 			// 日记页面的下拉加载更多
 			myScroll3.on('scroll', function(){
 				var nowPos = $('.con_choice')[0].offsetHeight - $('.con_choice').parent()[0].offsetHeight - parseInt(this.y)*(-1);
 				if ( nowPos <= 100 && ajaxOff == false ) {
-					console.log('go');
 					$.ajax({
-						type : 'GET',
-				        url: 'http://tb1483883.mvip7.xyz/con_choice.php?callback=?',
+						type : 'POST',
+				        url: 'http://tb1483883.mvip7.xyz/con_choice.php',
 				        dataType: "jsonp",
 				        jsonp: 'callback',
-				        jsonpCallback:"success_jsonpCallback",
+				        jsonpCallback:"addChoice",
+				        timeout : 3000,
 				        success: function (data) {
-				            console.log(data);
-
+				        	var str = '';
+				            for (var i = 0; i < data.length; i++) {
+				            	var inClass = data[i].in == 'y' ? 'choice_in' : 'choice_notin';
+				            	var inClass_con = data[i].in == 'y' ? '入住' : '精选';
+				            	str += '<dl><a href=#spa/choice_cell"><dd><img src="'+data[i].imgurl+'"/></dd><dd class="choice_cell_focus"><div class="choice_cell_watches"><i class="iconfont">&#xe718;</i><span>'+data[i].watches+'</span></div><div class="choice_cell_praise"><i class="iconfont">&#xe6f6;</i><span>'+data[i].good+'</span></div></dd><dd class="choice_cell_status '+inClass+'">'+inClass_con+'</dd><dt><div class="choice_author"><img src="'+data[i].author_img+'"/></div><div class="choice_info"><div class="choice_info_title">'+data[i].title+'</div><div class="choice_info_city">'+data[i].designer+'</div></div></dt></a></dl>';
+				            }
+				            $('.con_choice')[0].innerHTML += str;
 				            myScroll3.refresh();
 							setTimeout(function(){
 								ajaxOff = false;
@@ -510,6 +515,7 @@ define({
 
 					ajaxOff = true;
 				}
+
 			});
 
 			var myScroll4 = new IScroll('#scroll4',{
@@ -518,7 +524,14 @@ define({
 				interactiveScrollbars : true,
 				scrollbars: true
 			});
+
+			myScroll4.on('scrollStart', function(){
+				myScroll4.refresh();
+			});
+
+
 		}, 100)
+
 		var string_title = '<p class="title_nav_choice title_nav_act">精选</p><p class="title_nav_least">最新</p>';
 		var arrTitle = ['发现', '案例', string_title, '灵感', '攻略'];
 		function checkoutTitle(now_active){
