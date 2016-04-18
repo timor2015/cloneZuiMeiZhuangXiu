@@ -486,7 +486,6 @@ define({
 				myScroll3.refresh();
 			});
 
-
 			// 日记页面的下拉加载更多
 			myScroll3.on('scroll', function(){
 				var nowPos = $('.con_choice')[0].offsetHeight - $('.con_choice').parent()[0].offsetHeight - parseInt(this.y)*(-1);
