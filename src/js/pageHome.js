@@ -532,7 +532,7 @@ define({
 			// 轮播图无限下拉
 			myScroll4.on('scroll', function(){
 				var nowPos = $('.con_inspir')[0].offsetHeight - $('.con_inspir').parent()[0].offsetHeight - parseInt(this.y)*(-1);
-				if ( nowPos <= 100 && ajaxOff == false ) {
+				if ( nowPos <= 200 && ajaxOff == false ) {
 					$.ajax({
 						type : 'POST',
 				        url: 'http://tb1483883.mvip7.xyz/con_inspir.php',
@@ -549,7 +549,6 @@ define({
 				            		$('.inspir_right')[0].innerHTML += str;
 				            	}
 				            }
-				            console.log(3214)
 				            myScroll4.refresh();
 							setTimeout(function(){
 								ajaxOff = false;
