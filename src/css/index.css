@@ -247,8 +247,13 @@ li {
       height: 2rem;
       background: #c7c6c6;
       overflow: hidden; }
-      .content .swiper-slide .con_home .home_ban img {
-        width: 100%; }
+      .content .swiper-slide .con_home .home_ban a {
+        z-index: 2;
+        display: block;
+        width: 100%;
+        height: 100%; }
+        .content .swiper-slide .con_home .home_ban a img {
+          width: 100%; }
     .content .swiper-slide .con_home .home_actions {
       width: 100%;
       height: 2rem;
@@ -751,3 +756,8 @@ li {
         padding: 0.1rem 0.2rem;
         border: 1px solid #ccc;
         border-radius: 0.25rem; }
+
+#banner_info {
+  width: 100%;
+  height: 100%;
+  background: #fff; }

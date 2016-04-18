@@ -17,22 +17,22 @@ define({
 		        		<div class="home_ban">\
 		        			<div class="swiper-container" id="home_ban_swiper">\
 							    <div class="swiper-wrapper">\
-							        <div class="swiper-slide"><a href="#spa/banner-specific/1"><img src="./source/images/ban_1.jpg"/></a></div>\
-							        <div class="swiper-slide"><a href="#spa/banner-specific/2"><img src="./source/images/ban_2.jpg"/></a></div>\
-							        <div class="swiper-slide"><a href="#spa/banner-specific/3"><img src="./source/images/ban_3.jpg"/></a></div>\
+							        <div class="swiper-slide"><a href="#spa/banner" class="home_banner_info" data-animate="slideInLeft"><img src="./source/images/ban_1.jpg"/></a></div>\
+							        <div class="swiper-slide"><a href="#spa/banner" class="home_banner_info" data-animate="slideInLeft"><img src="./source/images/ban_2.jpg"/></a></div>\
+							        <div class="swiper-slide"><a href="#spa/banner" class="home_banner_info" data-animate="slideInLeft"><img src="./source/images/ban_3.jpg"/></a></div>\
 							    </div>\
 							    <div class="swiper-pagination"></div>\
 							</div>\
 		        		</div>\
 		        		<div class="home_actions">\
 		        			<div class="server_design">\
-		        				<a href="#spa/server_design">\
+		        				<a href="#spa/server_design" data-animate="slideInLeft">\
 		        					<i class="iconfont">&#xe729;</i>\
 		        					<p>装修设计</p>\
 		        				</a>\
 		        			</div>\
 		        			<div class="server_day">\
-		        				<a href="#spa/server_day">\
+		        				<a href="#spa/server_day"  data-animate="slideInLeft">\
 		        					<i class="iconfont">&#xe72e;</i>\
 		        					<p>写日记</p>\
 		        				</a>\
@@ -359,6 +359,69 @@ define({
 	    }
 
   		$('.swiper-container', $view).trigger('spa:scroll');
+		
+		// 轮播图页面 die
+		touch.on('.home_banner_info a', 'tap', function(){
+	    	$doc.trigger("spa:navigate", {
+			  hash: getHash('#spa/banner'),
+			  pushData : {
+			  	look : 'timor'
+			  }
+			})   
+	    })
+
+		// 装修设计入场
+	    touch.on('.server_design a', 'touchend', function(){
+	    	$doc.trigger("spa:navigate", {
+			  hash: getHash('#spa/server_design'),
+			  pushData : {
+			  	look : 'timor'
+			  }
+			})   
+	    });
+
+	    // 装修日历入场
+	    touch.on('.server_day a', 'touchend', function(){
+	    	$doc.trigger("spa:navigate", {
+			  hash: getHash('#spa/server_day'),
+			  pushData : {
+			  	look : 'timor'
+			  }
+			})   
+	    });
+
+	    // 金币商城入场
+	    touch.on('.server_cash a', 'touchend', function(){
+	    	$doc.trigger("spa:navigate", {
+			  hash: getHash('#spa/server_cash'),
+			  pushData : {
+			  	look : 'timor'
+			  }
+			})   
+	    });
+
+	    // 刮奖入场
+	    touch.on('.server_gua a', 'touchend', function(){
+	    	$doc.trigger("spa:navigate", {
+			  hash: getHash('#spa/server_gua'),
+			  pushData : {
+			  	look : 'timor'
+			  }
+			})   
+	    });
+
+	    // 案例详情页入场
+	    touch.on( '.con_case', 'tap', function(ev){
+	    	ev.preventDefault();
+	    	console.log(ev.target.tagName)
+	  //   	$doc.trigger("spa:navigate", {
+			//   hash: getHash('#spa/case_detail'),
+			//   pushData : {
+			//   	look : 'timor'
+			//   }
+			// })   
+	    });
+
 	},
 
 
@@ -417,11 +480,6 @@ define({
 				}
 			})
 		})();
-		
-		//console.log($('#scroll2')[0]);
-		$('#scroll2').on('scroll', function(){
-			console.log(234);
-		})
 
 		// 固定swiper高度
 		$('#swiper_home').css('height', $('#swiper_home').parent().css('height'));
