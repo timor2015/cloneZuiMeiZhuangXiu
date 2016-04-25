@@ -561,14 +561,15 @@ define({
 
 			// 日记页面的下拉加载更多
 			myScroll3.on('scroll', function(){
+				myScroll3.refresh();
 				var nowPos = $('.con_choice')[0].offsetHeight - $('.con_choice').parent()[0].offsetHeight - parseInt(this.y)*(-1);
 				if ( nowPos <= 100 && ajaxOff == false ) {
 					$.ajax({
-						type : 'POST',
+						type : 'GET',
 				        url: 'http://tb1483883.mvip7.xyz/con_choice.php',
 				        dataType: "jsonp",
 				        jsonp: 'callback',
-				        jsonpCallback:"addChoice",
+				        //jsonpCallback:"addChoice",
 				        timeout : 3000,
 				        success: function (data) {
 				        	var str = '';
@@ -604,6 +605,7 @@ define({
 
 			// 轮播图无限下拉
 			myScroll4.on('scroll', function(){
+				myScroll4.refresh();
 				var nowPos = $('.con_inspir')[0].offsetHeight - $('.con_inspir').parent()[0].offsetHeight - parseInt(this.y)*(-1);
 				if ( nowPos <= 200 && ajaxOff == false ) {
 					$.ajax({
