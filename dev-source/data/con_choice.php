@@ -6,7 +6,7 @@ header("Content-Type: text/html; charset=utf-8");
 $data = array(
 	'0' => array(
 		'in' => 'y',
-		'imgurl' => './source/images/choice1.jpg',
+		'imgurl' => './source/images/choice_1.jpg',
 		'watches' => '4万+',
 		'good' => '2367',
 		'author_img' => './source/images/designer1.jpg',
@@ -15,7 +15,7 @@ $data = array(
 		),
 	'1' => array(
 		'in' => 'y',
-		'imgurl' => './source/images/choice3.jpg',
+		'imgurl' => './source/images/choice_3.jpg',
 		'watches' => '9万+',
 		'good' => '126',
 		'author_img' => './source/images/designer5.jpg',
@@ -24,7 +24,7 @@ $data = array(
 		),
 	'2' => array(
 		'in' => 'n',
-		'imgurl' => './source/images/choice2.jpg',
+		'imgurl' => './source/images/choice_2.jpg',
 		'watches' => '4万+',
 		'good' => '2367',
 		'author_img' => './source/images/designer3.jpg',
@@ -33,12 +33,30 @@ $data = array(
 		),
 	'3' => array(
 		'in' => 'y',
-		'imgurl' => './source/images/choice4.jpg',
+		'imgurl' => './source/images/choice_4.jpg',
 		'watches' => '3482',
 		'good' => '876',
 		'author_img' => './source/images/designer7.jpg',
 		'title' => '[入住]美式欧式混搭Loft房',
 		'designer' => '[北京]3室2厅1卫/欧式',
+		),
+	'4' => array(
+		'in' => 'n',
+		'imgurl' => './source/images/choice_1.jpg',
+		'watches' => '5万+',
+		'good' => '8245',
+		'author_img' => './source/images/designer2.jpg',
+		'title' => '[精选]老房老味道:[80后的90年代]',
+		'designer' => '[郑州]3室2厅1卫/现代',
+		),
+	'5' => array(
+		'in' => 'y',
+		'imgurl' => './source/images/choice_2.jpg',
+		'watches' => '1904',
+		'good' => '129',
+		'author_img' => './source/images/designer7.jpg',
+		'title' => '[入住]美式田园风',
+		'designer' => '[武汉]3室2厅1卫/田园',
 		),
 	);
 
